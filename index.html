@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox ID</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #roblox-id {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+        #submit-btn {
+            margin-top: 10px;
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter your Roblox ID</h2>
+    <form>
+        <input type="text" id="roblox-id" placeholder="ID Roblox">
+        <br>
+        <button type="button" id="submit-btn">sumbit</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById("submit-btn").addEventListener("click", function() {
+            var robloxId = document.getElementById("roblox-id").value;
+            document.getElementById("result").innerText = "are you sure you want this public audio? " + robloxId;
+        });
+    </script>
+</body>
+</html>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>public audio</title>
+<style>
+    /* Style for switch */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Video Loading Style */
+    .video-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .loading {
+        width: 100px;
+        height: 100px;
+        border: 5px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 5px solid #3498db;
+        animation: spin 2s linear infinite;
+        display: none; /* Initially hidden */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+    <h2>public you audio and players can hear your audio</h2>
+    <label class="switch">
+        <input type="checkbox" id="mySwitch">
+        <span class="slider"></span>
+    </label>
+
+    <div class="video-container">
+        <h2 id="loadingText" style="display:none;">Loading..</h2>
+        <div class="loading" id="loadingAnimation"></div>
+        <h2 id="successText" style="display:none;">Success!</h2>
+    </div>
+
+    <script>
+        document.getElementById("mySwitch").addEventListener("change", function() {
+            var loadingText = document.getElementById("loadingText");
+            var loadingAnimation = document.getElementById("loadingAnimation");
+            var successText = document.getElementById("successText");
+
+            if (this.checked) {
+                loadingText.style.display = "block";
+                loadingAnimation.style.display = "block";
+                setTimeout(function() {
+                    loadingText.style.display = "none";
+                    loadingAnimation.style.display = "none";
+                    successText.style.display = "block";
+                }, 5000); // 5 seconds
+            } else {
+                successText.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
